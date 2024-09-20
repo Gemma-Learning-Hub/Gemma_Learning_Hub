@@ -225,13 +225,14 @@
                 <li>Neurodivergent Learning Tools</li>
             </div>
             <div class="footer-col">
-                <h3>Newsletter</h3>
-                <p>Receive exclusive updates, expert insights, and key developments from Gemma's Learning Hub, your premier source for innovative tech education</p>
-                <div class="subscribe">
-                    <input type="text" placeholder="Your Email address" >
-                    <a href="#" class="yellow">SUBSCRIBE</a>
-                </div>
+              <h3>Newsletter</h3>
+              <p>Receive exclusive updates, expert insights, and key developments from Gemma's Learning Hub, your premier source for innovative tech education</p>
+              <div class="subscribe">
+                <input type="text" placeholder="Your Email address" id="newsletter-email">
+                <a href="#" class="yellow" id="subscribe-btn">SUBSCRIBE</a>
+              </div>
             </div>
+            
             <div class="copyright">
                 <p>© 2024 Gemma's Learning Hub. All rights reserved.</p>
                 <div class="pro-links">
@@ -241,6 +242,53 @@
                 </div>
             </div>
         </footer>
+        <script type="module">
+          // Import Firebase functions
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+          import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
+        
+          // Firebase configuration
+          const firebaseConfig = {
+            apiKey: "AIzaSyANTJ_0pHLuXcEpv9zDwo6hCBSTjMxycH4",
+            authDomain: "contactform-d4317.firebaseapp.com",
+            projectId: "contactform-d4317",
+            storageBucket: "contactform-d4317.appspot.com",
+            messagingSenderId: "932298113287",
+            appId: "1:932298113287:web:8673d7af3c19ab6c9dc5a2",
+            measurementId: "G-31LWSWGV3J"
+          };
+        
+          // Initialize Firebase
+          const app = initializeApp(firebaseConfig);
+        
+          // Initialize Firestore
+          const db = getFirestore(app);
+        
+          // Newsletter subscription
+          document.getElementById('subscribe-btn').addEventListener('click', async function (event) {
+            event.preventDefault(); // Prevent the default behavior of the anchor link
+        
+            const email = document.getElementById('newsletter-email').value;
+        
+            if (email) {
+              try {
+                // Add the email to Firestore collection
+                await addDoc(collection(db, "newsletterSubscriptions"), {
+                  email: email,
+                  subscribedAt: serverTimestamp()
+                });
+                alert("Subscribed successfully!");
+                document.getElementById('newsletter-email').value = ""; // Clear the input field
+              } catch (error) {
+                console.error("Error subscribing: ", error);
+                alert("Failed to subscribe. Please try again later.");
+              }
+            } else {
+              alert("Please enter a valid email address.");
+            }
+          });
+        </script>
+        
         <script>
             $('#menu-btn').click(function(){
     $('nav .navigation ul').addClass('active')
