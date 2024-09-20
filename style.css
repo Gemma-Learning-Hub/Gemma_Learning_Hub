@@ -246,7 +246,7 @@ nav img{
        padding:20px;
        margin:0%;
        background-image: linear-gradient(rgba(99,112,168,0.5),rgba(81,91,233,0.5)),url("logos/images.jpg");
-       width: 100%;
+       width: auto;
        height: 100%;
        background-size: 100vw;
        background-position: center;
@@ -925,11 +925,10 @@ nav img{
     body{
         margin: 0px;
     }
-       nav{
-          
+       nav{  
            padding: 10px 20px;
            margin: 0px;
-           width:100vw;
+           width:100%;
           
        }
        nav img {
@@ -977,7 +976,7 @@ nav img{
            padding-top: 0px;
        }
        #home p{
-           width: 90%;
+           width: 100%;
        }
        #features{
            padding: 8vw 4vw 0 4vw;
@@ -990,11 +989,15 @@ nav img{
        #registration{
            margin-top: 8vw;
            padding: 6vw 4vw 6vw 4vw;
+           width:auto;
        }
        #registration .reminder .time {
            display: flex;
            flex-wrap: wrap;
            margin-top: 40px;
+       }
+       #registration .date p{
+        font-size: 1.1rem;
        }
        #experts{
            padding: 8vw 8vw 4vw 8vw;
