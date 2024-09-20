@@ -122,6 +122,57 @@
                </div>
            </div>
        </footer>
+       <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyANTJ_0pHLuXcEpv9zDwo6hCBSTjMxycH4",
+          authDomain: "contactform-d4317.firebaseapp.com",
+          projectId: "contactform-d4317",
+          storageBucket: "contactform-d4317.appspot.com",
+          messagingSenderId: "932298113287",
+          appId: "1:932298113287:web:8673d7af3c19ab6c9dc5a2",
+          measurementId: "G-31LWSWGV3J"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      
+        // Initialize Firestore
+        const db = getFirestore(app);
+      
+        // Handle form submission
+        document.querySelector('.contact-form').addEventListener('submit', async function (event) {
+          event.preventDefault(); // Prevent default form submission
+      
+          // Get form values
+          const name = document.querySelector('input[name="name"]').value;
+          const email = document.querySelector('input[name="email"]').value;
+          const subject = document.querySelector('input[name="subject"]').value;
+          const message = document.querySelector('textarea[name="message"]').value;
+      
+          // Save form data to Firestore
+          try {
+            await addDoc(collection(db, "contactMessages"), {
+              name: name,
+              email: email,
+              subject: subject,
+              message: message,
+              timestamp: serverTimestamp()  // Add timestamp for sorting
+            });
+            alert("Message sent successfully!");
+            document.querySelector('.contact-form').reset(); // Reset form
+          } catch (error) {
+            console.error("Error submitting form: ", error);
+          }
+        });
+      </script>
+      
        <script>
            $('#-menu-btn').click(function(){
                $('nav.navigation ul').addClass('active')
@@ -129,6 +180,7 @@
            $('#-menu-close').click(function(){
                $('nav.navigation ul').removeClass('active')
            });
+
        </script>
 </body>
 </html>
