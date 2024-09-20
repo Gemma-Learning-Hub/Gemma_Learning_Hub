@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Gemma's Learning Hub</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="icon" type="image/x-icon" href="Gemma_Learning_Hub_logo.png">
+   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<nav>
+   <img src="Gemma_Learning_Hub_logo.png" alt="">
+   <i id="menu-close" class="fa-regular fa-circle-xmark"></i>
+   <div class="navigation">
+       <ul>
+           <li><a href="index.html">Home</a></li>
+           <li><a href="about.html">About</a></li>
+           <li><a class="active" href="blog.html">Blog</a></li>
+           <li><a href="course.html">Courses</a></li>
+           <li><a href="contact.html">Contact</a></li>
+       </ul>
+       <img id="menu-btn" src="logos/menu.png" alt="">
+   </div>
+</nav>
+
+<section id="blog-container">
+   <div class="blogs blogpost">
+       <div class="post">
+           <img src="Computerfundamentalwithgemma.jpg" alt="C Programming">
+           <h3>Mastering C Programming: A Beginner's Guide</h3>
+           <p>
+               C programming is a powerful and versatile language that forms the backbone of many modern applications. It is known for its efficiency and control, making it a favorite among system programmers. Starting with C means understanding the basic structure of a program, including functions, variables, and control flow. 
+               <br><br>
+               To begin, you should familiarize yourself with the syntax and semantics of the language. A simple "Hello, World!" program is a great starting point:
+               <pre><code>#include <stdio.h>
+int main() {
+    printf("Hello, World!");
+    return 0;
+}</code></pre>
+               This code demonstrates the basic structure of a C program, including the `#include` directive, the `main` function, and the `printf` function.
+               <br><br>
+               As you progress, you'll learn about data types, operators, and control statements, such as loops and conditionals. Understanding arrays and pointers is also crucial, as they allow for efficient memory management and manipulation of data.
+               <br><br>
+               Additionally, mastering C programming will involve practicing problem-solving skills. Engage in exercises and projects that challenge you to apply what you've learned. Resources such as online coding platforms and textbooks can provide valuable practice problems and insights.
+               <br><br>
+               Debugging is an essential skill in programming. Make use of tools such as GDB (GNU Debugger) to identify and fix errors in your code. Reading and understanding error messages is key to resolving issues quickly.
+               <br><br>
+               C programming is not just about writing code; it also involves understanding the underlying principles of computer science. Concepts like data structures, algorithms, and memory management are fundamental to becoming a proficient C programmer.
+               <br><br>
+               With dedication and practice, you'll be able to harness the power of C programming to create efficient and robust applications. Remember, the journey of learning programming is ongoing, so stay curious and keep experimenting!
+           </p>
+           <a href="next-c-programming-post.html" class="read-next">Read Next ?</a>
+       </div>
+   </div>
+</section>
+
+<footer>
+   <div class="footer-col">
+       <h3>Top Resources</h3>
+       <li>Educational Tutorials</li>
+       <li>Student Guides</li>
+       <li>Learning Tools</li>
+       <li>Data Science Case Studies</li>
+   </div>
+   <div class="footer-col">
+       <h3>Featured Topics</h3>
+       <li>C Programming for Beginners</li>
+       <li>Machine Learning Insights</li>
+       <li>Analytics Best Practices</li>
+       <li>AI and Predictive Modeling</li>
+   </div>
+   <div class="footer-col">
+       <h3>Highlighted Areas</h3>
+       <li>Inclusive Tech Education</li>
+       <li>Collaborative Learning Strategies</li>
+       <li>Personalized Growth Pathways</li>
+       <li>Neurodivergent Learning Tools</li>
+   </div>
+   <div class="footer-col">
+       <h3>Newsletter</h3>
+       <p>Receive exclusive updates, expert insights, and key developments from Gemma's Learning Hub, your premier source for innovative tech education.</p>
+       <div class="subscribe">
+           <input type="text" placeholder="Your Email address">
+           <a href="#" class="yellow">SUBSCRIBE</a>
+       </div>
+   </div>
+   <div class="copyright">
+       <p>© 2024 Gemma's Learning Hub. All rights reserved.</p>
+       <div class="pro-links">
+           <i class="fab fa-facebook-f"></i>
+           <i class="fab fa-instagram"></i>
+           <i class="fab fa-linkedin-in"></i>
+       </div>
+   </div>
+</footer>
+
+<script>
+   $('#menu-btn').click(function(){
+       $('nav.navigation ul').addClass('active')
+   });
+   $('#menu-close').click(function(){
+       $('nav.navigation ul').removeClass('active')
+   });
+</script>
+</body>
+</html>
