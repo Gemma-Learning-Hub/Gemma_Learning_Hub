@@ -969,8 +969,13 @@ nav img{
                 nav .navigation ul li a{
                     color: #fff;
                 }
+                #about-home{
+                    height:auto;
+                }
                 #home {
                     padding-top: 0px;
+                    width:auto;
+                    height:auto;
                 }
                 #home p{
                     width: 90%;
@@ -1054,6 +1059,15 @@ nav img{
                
            
             @media (max-width:475px){
+                .contact-form{
+                    width:auto;
+                }
+                .contact-form p{
+                    width:200px;
+                }
+                .form-row{
+                    width: auto;
+                }
                #registration{
                     display: flex;
                     flex-direction: column;
