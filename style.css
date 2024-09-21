@@ -868,9 +868,9 @@ nav img{
               }*/
               .contact-form{
                 background-image: linear-gradient(rgba(90, 82, 134, 0.863),rgba(24, 24, 39, 0.7));
-                padding:20px 50px;
+                padding:20px 20px;
                 border-radius:20px;
-                width:500px;
+                width:auto;
                 height:auto;
               }
               .contact-form h4{
@@ -881,10 +881,12 @@ nav img{
               .contact-form p{
                 color:white;
                 font-weight: bold;
+                width: auto;
               }
               .contact-form .form-row  input{
                 padding:10px 100px;
                 margin:10px;
+                width: auto;
                 text-align: left;
                 border-radius: 20px;
                 border:none;
@@ -892,6 +894,7 @@ nav img{
               .contact-form .form-col input{
                 padding:10px 100px;
                 margin:10px;
+                width: auto;
                 text-align: left;
                 border-radius: 20px;
                 border:none;
@@ -1055,6 +1058,7 @@ nav img{
                 #contact .getin{
                     width: 250px;
                 }
+                
             }
                
            
