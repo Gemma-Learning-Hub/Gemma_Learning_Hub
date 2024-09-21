@@ -10,22 +10,123 @@
 <link rel="icon" type="image/x-icon" href="Gemma_Learning_Hub_logo.png">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-</head>
-<body>
-<nav>
-   <img src="logo.jpg" alt="">
-   <i id="menu-close" class="fa-regular fa-circle-xmark"></i>
-   <div class="navigation">
-       <ul>
-           <li><a href="index.html">Home</a></li>
-           <li><a  href="about.html">About</a></li>
-           <li><a class="active" href="blog.html">Blog</a></li>
-           <li><a href="course.html">Courses</a></li>
-           <li><a href="contact.html">Contact</a></li>
+<style>
+    /* Base styles for header */
+   header {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 10px 20px;
+       background-color: #ffffff; /* Ensure the background color covers the header */
+       position: sticky; /* Sticky position to keep it at the top */
+       top: 0; /* Stick to the top of the page */
+       width: auto; /* Full width */
+       z-index: 1000; /* Ensure it's on top of other content */
+       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+   }
+   
+   header img {
+       height: 40px;
+   }
+   
+   .navigation ul {
+       list-style-type: none;
+       display: flex;
+       gap: 20px;
+   }
+   
+   .navigation ul li a {
+       text-decoration: none;
+       color: rgb(2, 2, 2);
+   }
+   .navigation ul li a:hover {
+       text-decoration: none;
+       color: rgb(228, 176, 8);
+   }
+   /* Hamburger and close button styling */
+   .hamburger, #menu-close {
+       display: none;
+       cursor: pointer;
+   }
+   
+   #menu-close {
+       font-size: 32px;
+       color: white;
+       position: absolute;
+       top: 10px;
+       right: 10px;
+       cursor: pointer;
+   }
+   
+   @media (max-width: 768px) {
+       .navigation ul {
+           flex-direction: column;
+           background:  linear-gradient(rgba(9, 5, 54, 0.719),rgba(5, 4, 46, 0.952));
+           position: absolute;
+           top: 40px;
+           right: 0;
+           width: 100%;
+           height: 100vh;
+           display: none;
+           text-align: center;
+       }
+   
+       .navigation ul li {
+           padding: 20px;
+           margin-top:0px;
+           top:0;
+       }
+       .navigation ul li  a{
+           color:white;
+       }
+   
+       /* Show hamburger menu */
+       .hamburger {
+           display: block;
+       }
+   
+       /* When active, show the mobile menu */
+       .navigation.active ul {
+           display: flex;
+       }
+   
+       /* Show close button when menu is open */
+       .navigation.active + #menu-close {
+           display: block;
+       }
+   }
+   
+   /* Give space for the header height so content starts below it */
+   
+   
+   </style>
+   </head>
+   <body>
+   
+     <header>
+       <img src="Gemma_Learning_Hub_logo.png" alt="Logo">
+       
+       <!-- Close button for mobile navigation -->
+       <i id="menu-close" class="fa-regular fa-circle-xmark" style="display: none;"></i>
+       
+       <div class="navigation" id="nav-menu">
+           <ul>
+               <li><a class="active" href="index.html">Home</a></li>
+               <li><a href="about.html">About</a></li>
+               <li><a href="blog.html">Blog</a></li>
+               <li><a href="course.html">Courses</a></li>
+               <li><a href="contact.html">Contact</a></li>
            </ul>
-           <img id="menu-btn" src="logos/menu.png" alt="">
-           </div>
-           </nav>
+       </div>
+       
+       <!-- Hamburger menu for mobile view -->
+       <div class="hamburger" id="menu-btn">
+           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+               <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+           </svg>
+       </div>
+   </header>
+   
    <section id="about-home">
        <h2>Blog</h2>
        </section>
@@ -144,5 +245,6 @@ The key to mastering app development is practice. Start small—build simple app
                $('nav.navigation ul').removeClass('active')
            });
        </script>
+       <script src="hamburger.js"></script>
 </body>
 </html>
