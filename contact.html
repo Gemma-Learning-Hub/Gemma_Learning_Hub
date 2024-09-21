@@ -98,7 +98,61 @@
    
    /* Give space for the header height so content starts below it */
    
-   
+   /* Contact Form Styles for screen widths between 769px and 475px */
+@media (max-width: 769px) {
+    .contact-form {
+        padding: 10px;
+        width:auto;
+        text-align: center;
+    }
+    .contact-form h4 {
+        font-size: 22px; /* Reduce heading size */
+    }
+    .form-row input,
+    .form-col input,
+    .form-col textarea {
+        width: 100%; /* Full width for input fields */
+        margin-bottom: 15px; /* Add margin for spacing */
+    }
+    .form-col button {
+        width: 100%; /* Full width button */
+    }
+    .form-col textarea {
+        height: 150px;
+        width:auto; /* Adjust height */
+    }
+}
+
+@media (max-width: 475px) {
+    .contact-form {
+        padding: 5px;
+        text-align: center;
+        align-content: center;
+    }
+    .contact-form h4 {
+        font-size: 18px; /* Further reduce heading size */
+    }
+    .contact-form p {
+        text-align: center;
+    }
+    .form-row input,
+    .form-col input,
+    .form-col textarea {
+        width: auto; /* Full width for smaller screens */
+        font-size: 14px; /* Reduce input text size */
+        margin-bottom: 10px; /* Reduce margin for tighter spacing */
+    }
+    .form-col button {
+        width: auto;
+        height:auto; /* Ensure the button also takes full width */
+        font-size: 10px; /* Smaller button text size */
+    }
+    .form-col textarea {
+        height: 100px; /* Reduce height for smaller screens */
+    }
+}
+
+
    </style>
    </head>
    <body>
@@ -163,7 +217,7 @@
            </div>
            <form class="contact-form">
             <h4>Let’s Connect!</h4>
-            <p>We’d love to hear from you! Whether you have questions,<br> ideas, or opportunities for collaboration, connecting with us is the first step.<br> Reach out to discuss how we can work together, share insights, or simply have a meaningful conversation. Your input and engagement are valuable to us, and we’re excited to explore how we can connect and grow together.</p>
+            <p>We’d love to hear from you! Whether you have questions, ideas, or opportunities for collaboration, connecting with us is the first step. Reach out to discuss how we can work together, share insights, or simply have a meaningful conversation. Your input and engagement are valuable to us, and we’re excited to explore how we can connect and grow together.</p>
             <div class="form-row">
               <input type="text" placeholder="Your Name" name="name">
               <input type="email" placeholder="Email" name="email">
